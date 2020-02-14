@@ -25,7 +25,7 @@ CHALLENGES:
 urlpatterns = [
     # Admin Site
     path('admin/', admin.site.urls),
-
+    path('wiki/', include('wiki.urls'))
     # Wiki App
     # path('REPLACE_ME_WITH_ROUTE', include(REPLACE_ME_WITH_APP_URLS)),
 ]
