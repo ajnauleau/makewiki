@@ -14,7 +14,9 @@ class HomePage(ListView):
     model = Page
 
     def get(self, request):
-        return render(request, 'wiki/base.html')
+        latest_page_list = Page.objects.order_by('-created')
+        context = {'latest_page_list': latest_page_list}
+        return render(request, 'wiki/base.html', context)
 
 class PageList(ListView):
 
