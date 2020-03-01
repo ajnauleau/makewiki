@@ -13,6 +13,7 @@ from django.urls import path
 from wiki.views import *
 
 urlpatterns = [
-    path('', PageList.as_view(), name='wiki-list-page'),
+    path('', HomePage.as_view(), name='wiki-home-page'),
+    path('/pages', PageList.as_view(), name='wiki-list-page'),
     path('<slug:slug>/', PageDetailView.as_view(), name='wiki-details-page'),
 ]
